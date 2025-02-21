@@ -1,0 +1,35 @@
+/* Puedes agregar esto en el archivo CSS de tu componente, por ejemplo, add-product.component.css */
+
+nav {
+  background-color: #333;
+  padding: 10px;
+}
+
+.nav-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: space-around;
+}
+
+.nav-list li {
+  display: inline-block;
+}
+
+.nav-list a {
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 20px;
+  display: block;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.nav-list a:hover {
+  background-color: #575757;
+}
+
+.nav-list a.active {
+  background-color: #4CAF50; /* Resaltar el enlace activo con un color verde */
+}
