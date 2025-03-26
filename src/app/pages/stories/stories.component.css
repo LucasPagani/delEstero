@@ -1,0 +1,7 @@
+.mujeres {
+  width: 100%;
+  height: 200px;  /* Ajusta el tamaño según sea necesario */
+  object-fit: cover;  /* Mantiene las proporciones de la imagen */
+  margin-bottom: 15px;  /* Espacio entre la imagen y el texto */
+}
+

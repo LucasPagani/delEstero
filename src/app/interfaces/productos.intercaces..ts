@@ -1,8 +1,10 @@
-// product.interface.ts (Crea este archivo)
 export interface Product {
-  id?: string;
+  id: string;
+  type: string;
+  category: string;  // ✅ Asegurando que category esté presente
   name: string;
-  description: string;
   price: number;
-  // ... otros campos
+  description: string;
+  stock: number;
+  code: string;
 }

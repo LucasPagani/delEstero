@@ -1,16 +1,52 @@
- <div *ngFor="let product of products">
-  <a [routerLink]="['/product', product.id]">{{ product.name }}</a>
+<div class="container mt-4">
+  <h2 class="text-center mb-4">Lista de Productos</h2>
+
+  <!-- Selección de categoría -->
+  <div class="row align-items-center mb-3">
+    <div class="col-md-6">
+      <select [(ngModel)]="selectedCategory" class="form-select">
+        <option value="">Todas las categorías</option>
+        <option value="alfombras">Alfombras</option>
+        <option value="caminos">Caminos</option>
+        <option value="alfareria">Alfareria</option>
+        <option value="textil">Textil</option>
+        <option value="cesteria">Cesteria</option>
+      </select>
+    </div>
+
+    <!-- Botones de acción -->
+    <div class="col-md-6 d-flex gap-3">
+      <button (click)="filterByCategory()" class="btn btn-primary w-50">Filtrar</button>
+      <button (click)="reset()" class="btn btn-outline-secondary w-50">Reset</button>
+    </div>
+  </div>
+
+  <!-- Lista de productos -->
+  <div class="row">
+    <div *ngFor="let product of filteredProducts" class="col-lg-4 col-md-6 col-sm-12 mb-4">
+      <div class="card shadow-sm h-100">
+        <div class="card-body">
+          <h5 class="card-title text-primary">{{ product.name }}</h5>
+          <p class="card-text"><strong>ID:</strong> {{ product.id }}</p>
+          <p class="card-text"><strong>Precio:</strong> ${{ product.price }}</p>
+          <p class="card-text"><strong>Categoría:</strong> {{ product.type }}</p>
+          <p class="card-text"><strong>Código:</strong> {{ product.code }}</p>
+          <p class="card-text"><strong>Stock:</strong> {{ product.stock }}</p>
+          <p class="card-text text-muted">{{ product.description }}</p>
+
+          <!-- Botón Editar -->
+          <div class="d-flex justify-content-end">
+            <button (click)="editProduct(product.id)" class="btn btn-warning btn-sm">
+              ✏️ Editar
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Botón Dashboard -->
+  <div class="text-center mt-4">
+    <button (click)="dashboard()" class="btn btn-dark">📊 Ir al Dashboard</button>
+  </div>
 </div>
-
-
-<h2>Lista de Productos</h2>
-<ul>
-  <li *ngFor="let product of products">
-    <h3>{{ product.name }}</h3>
-    <p>Tipo: ${{ product.type }}</p>
-    <p>Precio: ${{ product.price }}</p>
-    <p>Descripción: {{ product.description }}</p>
-    <p>Stock: {{ product.stock }}</p>
-  </li>
-</ul>
-

@@ -1,0 +1,24 @@
+.admin-dashboard {
+  max-width: 900px;
+  margin: auto;
+}
+
+.stats .card {
+  border-radius: 10px;
+  transition: transform 0.2s ease-in-out;
+}
+
+.stats .card:hover {
+  transform: translateY(-5px);
+}
+
+.stat-title {
+  font-size: 14px;
+  font-weight: bold;
+  color: #555;
+}
+
+.btn-sm {
+  font-size: 13px;
+  padding: 5px 10px;
+}

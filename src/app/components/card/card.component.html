@@ -1,0 +1,11 @@
+<div class="card shadow-lg border-0 rounded-4 overflow-hidden">
+  <img class="card-img-top product-image" (click)="goToDetails(product.id)"
+       [src]="getImageUrl(product.code)" alt="{{ product.name }}">
+  <div class="card-body text-center">
+    <h4 class="card-title text-primary fw-bold">{{ product.name }}</h4>
+    <p class="card-text text-muted fs-5"><strong>Precio:</strong> ${{ product.price }}</p>
+    <button class="btn btn-success btn-lg w-100 mt-2 fw-bold" (click)="comprar()">
+      🛒 Agregar al Carrito
+    </button>
+  </div>
+</div>

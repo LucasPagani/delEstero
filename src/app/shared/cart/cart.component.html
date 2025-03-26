@@ -1,0 +1,41 @@
+<div class="container mt-5">
+  <div class="card shadow-lg">
+    <div class="card-header bg-primary text-white">
+      <h2 class="mb-0">🛒 Carrito de Compras</h2>
+    </div>
+    <div class="card-body">
+      <div *ngIf="cartItems.length > 0; else emptyCart">
+        <table class="table table-hover">
+          <thead class="thead-dark">
+            <tr>
+              <th>Producto</th>
+              <th>Precio</th>
+              <th>Cantidad</th>
+              <th>Acción</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of cartItems; let i = index">
+              <td>{{ item.name }}</td>
+              <td>{{ item.price | currency }}</td>
+              <td>1</td>
+              <td>
+                <button class="btn btn-danger btn-sm" (click)="removeFromCart(i)">
+                  ❌ Eliminar
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="d-flex justify-content-between align-items-center mt-3">
+          <button class="btn btn-warning" (click)="clearCart()">🗑 Vaciar Carrito</button>
+          <button class="btn btn-success" (click)="pagar()">💳 Pagar</button>
+        </div>
+      </div>
+
+      <ng-template #emptyCart>
+        <p class="text-center text-muted">Tu carrito está vacío 😔</p>
+      </ng-template>
+    </div>
+  </div>
+</div>

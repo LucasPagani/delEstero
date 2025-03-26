@@ -1,35 +1,117 @@
-/* Puedes agregar esto en el archivo CSS de tu componente, por ejemplo, add-product.component.css */
-
-nav {
-  background-color: #333;
-  padding: 10px;
+.carousel-inner img {
+  width: 80%;
+  height: 500px; /* Ajusta la altura según necesites */
+  object-fit: cover;
 }
 
-.nav-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+/* Overlay de texto en el carrusel */
+.overlay-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  z-index: 10;
+  font-size: 50px;
+  font-family: 'Courier New', Courier, monospace;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+  pointer-events: none;
+}
+
+/* Imagen de mujeres */
+.mujeres {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  margin-bottom: 15px;
+}
+
+.product-list {
   display: flex;
-  justify-content: space-around;
+  gap: 30px; /* Aumenté el espacio entre tarjetas */
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding: 10px 0;
 }
 
-.nav-list li {
-  display: inline-block;
+app-card {
+  width: 100%;
+  max-width: 240px; /* Ligeramente más pequeña para no apretarse */
+  margin: auto;
 }
 
-.nav-list a {
-  color: #fff;
-  text-decoration: none;
-  padding: 10px 20px;
-  display: block;
-  border-radius: 5px;
-  font-size: 16px;
+/* Estilos generales de títulos */
+h2 {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 40px; /* Un poco más pequeño */
+  text-align: center;
+  margin: 20px;
 }
 
-.nav-list a:hover {
-  background-color: #575757;
+/* Media Queries para responsividad */
+@media (max-width: 992px) {
+  .product-list {
+    grid-template-columns: repeat(3, 1fr); /* En tablet 3 columnas */
+  }
 }
 
-.nav-list a.active {
-  background-color: #4CAF50; /* Resaltar el enlace activo con un color verde */
+@media (max-width: 768px) {
+  .product-list {
+    grid-template-columns: repeat(2, 1fr); /* En pantallas más pequeñas 2 columnas */
+  }
+}
+
+@media (max-width: 500px) {
+  .product-list {
+    grid-template-columns: 1fr; /* En móvil 1 columna */
+  }
+}
+
+/* Contenedor del carrusel de productos */
+.carousel-container {
+  position: relative;
+  margin-bottom: 30px;
+  padding: 10px; /* Espacio extra alrededor del carrusel */
+}
+
+/* Lista de productos en carrusel */
+.product-list {
+  display: flex;
+  gap: 40px; /* Menos espacio entre tarjetas */
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding: 10px 0;
+}
+
+/* Ítems dentro del carrusel */
+.product-item {
+  flex: 0 0 auto;
+  width: 240px; /* Un poco más grande que antes */
+}
+
+/* Botones del carrusel */
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 10;
+  font-size: 24px;
+}
+
+.carousel-btn.left {
+  left: 10px;
+}
+
+.carousel-btn.right {
+  right: 10px;
+}
+
+/* Ocultar scrollbar */
+.product-list::-webkit-scrollbar {
+  display: none;
 }

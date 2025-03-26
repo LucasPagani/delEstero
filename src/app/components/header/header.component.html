@@ -1,0 +1,52 @@
+<div class="contenedor bg-light shadow-sm py-2">
+  <div class="barra d-flex justify-content-between align-items-center container">
+    <a class="logo text-decoration-none d-flex align-items-center">
+      <h1 class="logo__nombre fw-bold m-0 text-danger" (click)="home()">
+        Del<span class="logo__bold text-primary">Estero</span>
+        <img class="logoPichi" src="images/logoPichi2.png" alt="">
+      </h1>
+    </a>
+
+    <!-- Icono del carrito alineado a la derecha -->
+    <div class="ms-auto carro">
+      <a routerLink="/cart" class="cart-icon text-dark position-relative">
+        <i class="fas fa-shopping-cart fa-2x"></i>
+        <span class="badge bg-danger position-absolute top-0 start-100 translate-middle" *ngIf="cartItemCount > 0">
+          {{ cartItemCount }}
+        </span>
+      </a>
+    </div>
+  </div>
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light mt-2 container">
+    <div class="container-fluid">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" routerLink="/product-list">Productos</a></li>
+          <li class="nav-item"><a class="nav-link" routerLink="/create">Agregar Producto</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Categorías
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" [routerLink]="['/']" [fragment]="'alfombras'">Alfombras</a></li>
+              <li><a class="dropdown-item" [routerLink]="['/']" [fragment]="'caminos'">Caminos</a></li>
+              <li><a class="dropdown-item" [routerLink]="['/']" [fragment]="'cesteria'">Cestas</a></li>
+              <li><a class="dropdown-item" [routerLink]="['/']" [fragment]="'textil'">Cestas</a></li>
+              <li><a class="dropdown-item" [routerLink]="['/']" [fragment]="'accesorios'">Accesorios</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link" routerLink="/about">Sobre nosotros</a></li>
+          <li class="nav-item"><a class="nav-link" routerLink="/stories">Historias</a></li>
+        </ul>
+        <form class="d-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
+          <button class="btn btn-outline-primary" type="submit">Buscar</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+</div>

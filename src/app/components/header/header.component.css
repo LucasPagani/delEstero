@@ -1,0 +1,11 @@
+.barra{
+  height: 150px
+}
+.logoPichi {
+  width: 150px; /* Ajusta este valor según el tamaño deseado */
+  height: auto;
+}
+
+.logo__nombre {
+  font-size: 75Px; /* Ajusta el tamaño del texto si es necesario */
+}

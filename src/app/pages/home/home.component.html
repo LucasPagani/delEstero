@@ -1,8 +1,116 @@
-<nav>
-  <ul class="nav-list">
-    <!-- <li><a routerLink="/dashboard" routerLinkActive="active">Dashboard</a></li> -->
-    <li><a routerLink="/product-list" routerLinkActive="active">Productos</a></li>
-    <!-- <li><a routerLink="/login" routerLinkActive="active">Login</a></li> -->
-    <li><a routerLink="/add-product" routerLinkActive="active">Agregar Producto</a></li>
-  </ul>
-</nav>
+<!-- Contenedor principal con overlay -->
+<div class="container banner position-relative text-center">
+  <div class="my-4">
+    <div id="carouselExampleIndicators" class="carousel slide custom-carousel mx-auto" data-bs-ride="carousel" data-bs-interval="7500">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+          aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+          aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+          aria-label="Slide 3"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3"
+          aria-label="Slide 4"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4"
+          aria-label="Slide 5"></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="5.webp" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="2.jpg" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="3.jpg" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="4.webp" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="mujeres2.png" class="d-block w-100" alt="...">
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+        data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+        data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </div>
+  <!-- Overlay con texto -->
+  <div class="overlay-text">
+    <h1 class="mb-3">Del telar a tu casa</h1>
+  </div>
+</div>
+
+
+
+
+<div class="container mt-3" >
+  <!-- Caminos -->
+  <h2 id="caminos" *ngIf="getProductsByType('caminos').length > 0">Caminos de mesa</h2>
+  <div class="carousel-container" *ngIf="getProductsByType('caminos').length > 0">
+    <button class="carousel-btn left" (click)="scrollLeft('caminos')">❮</button>
+    <div class="product-list" id="caminos">
+      <div *ngFor="let product of getProductsByType('caminos')" class="product-item">
+        <app-card [product]="product"></app-card>
+      </div>
+    </div>
+    <button class="carousel-btn right" (click)="scrollRight('caminos')">❯</button>
+  </div>
+
+  <!-- Alfombras -->
+  <h2 id="alfombras" *ngIf="getProductsByType('alfombras').length > 0">Alfombras</h2>
+  <div class="carousel-container" *ngIf="getProductsByType('alfombras').length > 0">
+    <button class="carousel-btn left" (click)="scrollLeft('alfombras')">❮</button>
+    <div class="product-list" id="alfombras">
+      <div *ngFor="let product of getProductsByType('alfombras')" class="product-item">
+        <app-card [product]="product"></app-card>
+      </div>
+    </div>
+    <button class="carousel-btn right" (click)="scrollRight('alfombras')">❯</button>
+  </div>
+
+  <!-- Cestería -->
+  <h2 id="cesteria" *ngIf="getProductsByType('cesteria').length > 0">Cestería</h2>
+  <div class="carousel-container" *ngIf="getProductsByType('cesteria').length > 0">
+    <button class="carousel-btn left" (click)="scrollLeft('cesteria')">❮</button>
+    <div class="product-list" id="cesteria">
+      <div *ngFor="let product of getProductsByType('cesteria')" class="product-item">
+        <app-card [product]="product"></app-card>
+      </div>
+    </div>
+    <button class="carousel-btn right" (click)="scrollRight('cesteria')">❯</button>
+  </div>
+
+  <!-- Alfarería -->
+  <h2 id="alfareria" *ngIf="getProductsByType('alfareria').length > 0">Alfarería</h2>
+  <div class="carousel-container" *ngIf="getProductsByType('alfareria').length > 0">
+    <button class="carousel-btn left" (click)="scrollLeft('alfareria')">❮</button>
+    <div class="product-list" id="alfareria">
+      <div *ngFor="let product of getProductsByType('alfareria')" class="product-item">
+        <app-card [product]="product"></app-card>
+      </div>
+    </div>
+    <button class="carousel-btn right" (click)="scrollRight('alfareria')">❯</button>
+  </div>
+
+  <!-- Textil -->
+  <h2 id="textil" *ngIf="getProductsByType('textil').length > 0">Textil</h2>
+  <div class="carousel-container" *ngIf="getProductsByType('textil').length > 0">
+    <button class="carousel-btn left" (click)="scrollLeft('textil')">❮</button>
+    <div class="product-list" id="textil">
+      <div *ngFor="let product of getProductsByType('textil')" class="product-item">
+        <app-card [product]="product"></app-card>
+      </div>
+    </div>
+    <button class="carousel-btn right" (click)="scrollRight('textil')">❯</button>
+  </div>
+</div>
+

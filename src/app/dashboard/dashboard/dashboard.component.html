@@ -1,0 +1,52 @@
+<div class="admin-dashboard container">
+  <h1 class="text-center my-4">Panel de Administración</h1>
+
+  <div class="stats row">
+    <div class="col-md-3">
+      <div class="card p-3 text-center shadow-sm">
+        <p class="stat-title">🛍️ Total Productos</p>
+        <h4>150</h4>
+        <button class="btn btn-primary btn-sm mt-2" (click)="verProductos()">Ver Productos</button>
+      </div>
+    </div>
+
+    <div class="col-md-3">
+      <div class="card p-3 text-center shadow-sm">
+        <p class="stat-title">🛍️ Agregar</p>
+        <h4>150</h4>
+        <button class="btn btn-primary btn-sm mt-2" (click)="agregarProductos()">Agregar</button>
+      </div>
+    </div>
+
+    <div class="col-md-3">
+      <div class="card p-3 text-center shadow-sm">
+        <p class="stat-title">📦 Pedidos Pendientes</p>
+        <h4>5</h4>
+        <button class="btn btn-success btn-sm mt-2" (click)="verPedidos()">Ver Pedidos</button>
+      </div>
+    </div>
+
+    <div class="col-md-3">
+      <div class="card p-3 text-center shadow-sm">
+        <p class="stat-title">⚙️ Pedidos en Gestión</p>
+        <h4>2</h4>
+        <button class="btn btn-info btn-sm mt-2" (click)="verPedidosEnGestion()">Gestionar</button>
+      </div>
+    </div>
+
+    <div class="col-md-3">
+      <div class="card p-3 text-center shadow-sm">
+        <p class="stat-title">💰 Ventas Hoy</p>
+        <h4>$2,500</h4>
+        <button class="btn btn-warning btn-sm mt-2" (click)="verVentas()">Ver Ventas</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="sections text-center mt-4">
+    <a routerLink="/admin/products" class="btn btn-outline-primary mx-2">📌 Gestionar Productos</a>
+    <a routerLink="/admin/orders" class="btn btn-outline-success mx-2">📌 Pedidos</a>
+    <a routerLink="/admin/orders-management" class="btn btn-outline-info mx-2">📌 Pedidos en Gestión</a>
+    <a routerLink="/admin/sales" class="btn btn-outline-warning mx-2">📌 Ventas</a>
+  </div>
+</div>
